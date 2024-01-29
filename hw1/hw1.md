@@ -1,4 +1,4 @@
-#Making a KALI Virtual Machine Instance
+##Making a KALI Virtual Machine Instance
     Installing and configuring a Kali instance on a Windows laptop was relatively painless.  There are two easily accessible methods on Windows 11 (Pro or education).  The first is using WSL and that is just as easy as this:
     ```in admin Powershell
         wsl --install -d kali-linux
