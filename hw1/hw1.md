@@ -66,7 +66,7 @@
 
     ## OUTPUT from ip a s from both VM's
 
-    ![ip a s from WSL-Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/wsl-kali-ipas.png)
+    ![ip a s from WSL-Kali](/wsl-kali-ipas.png)
     ![ip a s from HYPER-V Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads)
 
     ## OUTPUT from both VM's after running setup.sh twice
