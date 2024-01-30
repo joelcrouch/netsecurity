@@ -66,13 +66,13 @@
 
     ## OUTPUT from ip a s from both VM's
 
-    ![ip a s from WSL-Kali]([wsl-kali-ipas.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/wsl-kali-ipas.png?ref_type=heads))
-    ![ip a s from HYPER-V Kali]([kali-ipas-hyperv.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads))
+    ![ip a s from WSL-Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/wsl-kali-ipas.png?ref_type=heads)
+    ![ip a s from HYPER-V Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads)
 
     ## OUTPUT from both VM's after running setup.sh twice
 
-    ![Kali HyperV after running setup.sh twice]([kali-hyperv-afterrunningsetupsh.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-hyperv-afterrunningsetupsh.png?ref_type=heads))
-    ![WSL Kali after running setup.sh twice]([kali-wsl-afterrunningsetupshtwice.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-wsl-afterrunningsetupshtwice.png?ref_type=heads))
+    ![Kali HyperV after running setup.sh twice](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-hyperv-afterrunningsetupsh.png?ref_type=heads)
+    ![WSL Kali after running setup.sh twice](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-wsl-afterrunningsetupshtwice.png?ref_type=heads)
 
 
     
