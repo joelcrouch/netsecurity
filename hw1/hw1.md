@@ -66,6 +66,9 @@
 
     OUTPUT from ip a s from both VM's
 
+    ![Alt text](kali-hyperv-afterrunningsetupsh-2.png)
+
+
     ![ip a s from WSL-Kali](./wsl-kali-ipas.png)
     ![ip a s from HYPER-V Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads)
 
