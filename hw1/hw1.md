@@ -50,7 +50,7 @@
     Setup.sh will do a bunch of stuff.  Install python packages thru pip.  This is exciting because Kali doesn't allow it. This script uses .env to get around it.  Take a look at how it works.  You might need to understand how to do that for future references.  Maybe even write a function that you can use do it so you can lazily type less.  Just saying.   
     The script also sets up zsh as your default terminal.  It has a lot more features than native bash. Its cool.  geeks has nice little comparison of bash and zzh: (https://www.geeksforgeeks.org/bash-scripting-difference-between-zsh-and-bash/)
 
-    #### SYSTEM CONFIGURATION
+     SYSTEM CONFIGURATION
 
     To get the setup.sh follow these instructions: (https://dkmcgrath.github.io/courses/netsec/linux_setup.html)
     **Make sure you change your git config name and email here in setup.sh before running it.**
@@ -64,12 +64,12 @@
     ```
     You may have to install 'curl'. (```bash sudo apt install curl```)  Also at the end of the script, it asks you to tar a file that the script downloads.  Unzip it and run it, and you are done.
 
-    ## OUTPUT from ip a s from both VM's
+    OUTPUT from ip a s from both VM's
 
     ![ip a s from WSL-Kali](./wsl-kali-ipas.png)
     ![ip a s from HYPER-V Kali](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads)
 
-    ## OUTPUT from both VM's after running setup.sh twice
+    OUTPUT from both VM's after running setup.sh twice
 
     ![Kali HyperV after running setup.sh twice](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-hyperv-afterrunningsetupsh.png?ref_type=heads)
     
