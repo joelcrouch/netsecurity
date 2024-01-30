@@ -72,6 +72,9 @@
     ## OUTPUT from both VM's after running setup.sh twice
 
     ![Kali HyperV after running setup.sh twice](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-hyperv-afterrunningsetupsh.png?ref_type=heads)
+    
+    ![Alt text](kali-hyperv-afterrunningsetupsh-1.png)
+
     ![WSL Kali after running setup.sh twice](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-wsl-afterrunningsetupshtwice.png?ref_type=heads)
 
 
