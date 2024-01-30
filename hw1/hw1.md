@@ -1,4 +1,5 @@
-#Making a KALI Virtual Machine Instance
+## Making a KALI Virtual Machine Instance
+
     Installing and configuring a Kali instance on a Windows laptop was relatively painless.  There are two easily accessible methods on Windows 11 (Pro or education).  The first is using WSL and that is just as easy as this:
     ```in admin Powershell
         wsl --install -d kali-linux
@@ -39,6 +40,7 @@
     Follow these instructions: ( https://dkmcgrath.github.io/courses/netsec/hyper-v.html ) and it should not take too long.  The instructions are for installing a BSD bastion server, but you can just replace BSD references with the appropriate Kali references.  
 
 ## Running setup.sh
+
     In the instructions above there is a setup.sh that is downloaded.  Make sure you change the permissions
     ```bash
         chmod +x setup.sh
@@ -48,7 +50,8 @@
     Setup.sh will do a bunch of stuff.  Install python packages thru pip.  This is exciting because Kali doesn't allow it. This script uses .env to get around it.  Take a look at how it works.  You might need to understand how to do that for future references.  Maybe even write a function that you can use do it so you can lazily type less.  Just saying.   
     The script also sets up zsh as your default terminal.  It has a lot more features than native bash. Its cool.  geeks has nice little comparison of bash and zzh: (https://www.geeksforgeeks.org/bash-scripting-difference-between-zsh-and-bash/)
 
-    ####SYSTEM CONFIGURATION
+    #### SYSTEM CONFIGURATION
+
     To get the setup.sh follow these instructions: (https://dkmcgrath.github.io/courses/netsec/linux_setup.html)
     **Make sure you change your git config name and email here in setup.sh before running it.**
     or do this 
@@ -61,13 +64,15 @@
     ```
     You may have to install 'curl'. (```bash sudo apt install curl```)  Also at the end of the script, it asks you to tar a file that the script downloads.  Unzip it and run it, and you are done.
 
-    ##OUTPUT from ip a s from both VM's
-    ![ip a s from WSL-Kali](wsl-kali-ipas.png)
-    ![ip a s from HYPER-V Kali](kali-ipas-hyperv.png)
+    ## OUTPUT from ip a s from both VM's
 
-    ##OUTPUT from both VM's after running setup.sh twice
-    ![Kali HyperV after running setup.sh twice](kali-hyperv-afterrunningsetupsh.png)
-    ![WSL Kali after running setup.sh twice](kali-wsl-afterrunningsetupshtwice.png)
+    ![ip a s from WSL-Kali]([wsl-kali-ipas.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/wsl-kali-ipas.png?ref_type=heads))
+    ![ip a s from HYPER-V Kali]([kali-ipas-hyperv.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-ipas-hyperv.png?ref_type=heads))
+
+    ## OUTPUT from both VM's after running setup.sh twice
+
+    ![Kali HyperV after running setup.sh twice]([kali-hyperv-afterrunningsetupsh.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-hyperv-afterrunningsetupsh.png?ref_type=heads))
+    ![WSL Kali after running setup.sh twice]([kali-wsl-afterrunningsetupshtwice.png](https://gitlab.cecs.pdx.edu/crouchj/netsec-crouchj/-/blob/main/hw1/kali-wsl-afterrunningsetupshtwice.png?ref_type=heads))
 
 
     
