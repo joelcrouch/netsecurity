@@ -247,7 +247,107 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 That is kind of correct, but the squashfs file system is missing.  Again-Sugar-shorts. That implies some of the data is out of order/missing.  Lets continue and see if i can get the answers required.
 
+
+## Solution Part Deux
+After alot of wrestling, Kevin just gave us a method to get the binary.
+```
+python-scapy
+
+f=open('download2.bin', 'wb')
+>>> for i in range(0, len(less),4):
+...: ...:     offset=int(less[i][Raw].load[less[i][Raw].load.find(b'offset=')+7:less[i][Raw].load.find(b'&size=')])
+...: ...:     first=less[i+2][Raw].load[less[i+2][Raw].load.find(b'\r\n\r\n'):]
+...: ...:     second=less[i+3][Raw].load
+...: ...:     b=base64_bytes(first[first.find(b'\r\n\r\n')+4:]+second)
+...: ...:     a=f.seek(offset,0)
+...: ...:     a=f.write(b)
+...: 
+
+```
+I ran it directly in Scapy.
+
+
 ## Interrogating the binary
+Finally, we have a binary that we can interrogate.  
+```
+bash
+
+──(joel㉿LAPTOP-M41GA6ID)-[~]
+└─$ binwalk download2.bin
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+48            0x30            Unix path: /dev/mtdblock/2
+96            0x60            LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 4438276 bytes
+302958        0x49F6E         MySQL MISAM index file Version 4
+1441888       0x160060        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2208988 bytes, 1159 inodes, blocksize: 262144 bytes, created: 2019-08-06 21:20:37
+
+```
+A file is created, I think, when you do a 'binwalk': '_download2.bin.extracted'.  This is where the data about the download lives at.  So
+
+```
+bash
+cd _download2.bin.extracted
+ls
+cd 60
+file 60(result=data=not useful)
+cd squashfs-root
+ls 
+"MONEY!"
+
+```
+That gets you to here:
+```
+bash
+joel㉿LAPTOP-M41GA6ID)-[~/_download2.bin.extracted/squashfs-root]
+└─$ ls                                                                                                                                  
+bin  dev  etc  lib  mnt  overlay  proc  rom  root  sbin  sys  tmp  usr  var  www
+```
+Great.  Now we can get some fact-finding going.  
+This is what we really want to know:
+
+   1. What architecture is the firmware intended to run on?
+   2. What OS is the firmware running?
+   3. What users are present on the system?
+
+So do this:
+
+readelf -h /bin/ls | less  and this should be the output:
+
+```
+bash
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Position-Independent Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x6300
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          149392 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         13
+  Size of section headers:           64 (bytes)
+  Number of section headers:         31
+  Section header string table index: 30
+~
+~
+
+```
+
+The readelf output clearly shows that the architecture is X86-64, and the OS is Unix-like, so maybe Linux or MacOs.  It is most likely Linux, as you can see many Linux commands and there is a script in /squashfs-root/lib/config that 1) is a .sh file=bash and 2) shows the GNU license "Free software blah, blah, blah.."  It is a Linux OS. And also I found some '.ko' files, so since they are kernel module extenders (drivers?), this is Linux.
+
+As far as what users are present on the system, that is a good question.  I don't think there are any users present on the system.  There is space for Users, admin, root,daemons, and they have passwords associated with them.  
+
+
+
+
 
 
 
